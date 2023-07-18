@@ -7,21 +7,24 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // PCキー横方向入力.
-        float horizontalKeyInput = 0;
-        // PCキー縦方向入力.
-        float verticalKeyInput = 0;
-
+  
     }
 
     // Update is called once per frame
     void Update()
     {
-        // PCキー入力取得.
-        horizontalKeyInput = Input.GetAxis("Horizontal");
-        verticalKeyInput = Input.GetAxis("Vertical");
-
-        Debug.Log(horizontalKeyInput + "." + verticalKeyInput);
+        if(Input. GetKey(KeyCode. W))
+        {
+            transform.position += new Vector3(0, 0, 0.1f);
+        }
+        if (Input.GetKey(KeyCode. S))
+        {
+            transform.position += new Vector3(0, 0, -0.1f);
+        }
+        if (Input.GetKey(KeyCode. A))
+        {
+            transform.position += new Vector3(-0.1f, 0, 0);
+        }
     }
 
     // ---------------------------------------------------------------------

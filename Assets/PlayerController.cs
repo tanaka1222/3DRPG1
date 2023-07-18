@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
         {
             transform.position += new Vector3(-0.1f, 0, 0);
         }
+        if (Input.GetKey(KeyCode. D))
+        {
+            transform.position += new Vector3(0.1f, 0, 0);
+        }
     }
 
     // ---------------------------------------------------------------------

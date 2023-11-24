@@ -52,7 +52,7 @@ namespace WarriorAnimsFREE
 		private void Awake()
 		{
 			// Get SuperCharacterController.
-			superCharacterController = GetComponent<SuperCharacterController>();
+			//superCharacterController = GetComponent<SuperCharacterController>();
 
 			// Get Movement Controller.
 			warriorMovementController = GetComponent<WarriorMovementController>();
@@ -101,7 +101,7 @@ namespace WarriorAnimsFREE
 			rb = GetComponent<Rigidbody>();
 			if (rb != null) { rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ; }
 
-			currentState = WarriorState.Idle;
+			//currentState = WarriorState.Idle;
 		}
 
 		#endregion
@@ -159,7 +159,7 @@ namespace WarriorAnimsFREE
 			GetInput();
 
 			// Character is on ground.
-			if (MaintainingGround() && canAction) { Attacking(); }
+			//if (MaintainingGround() && canAction) { Attacking(); }
 
 			UpdateAnimationSpeed();
 		}
@@ -294,18 +294,18 @@ namespace WarriorAnimsFREE
 		/// <summary>
 		/// Returns whether the character is near the ground.
 		/// </summary>
-		public bool AcquiringGround()
-		{
-			return superCharacterController.currentGround.IsGrounded(false, 0.01f);
-		}
+		//public bool AcquiringGround()
+		//{
+			//return superCharacterController.currentGround.IsGrounded(false, 0.01f);
+		//}
 
 		/// <summary>
 		/// Returns whether the character is on the ground.
 		/// </summary>
-		public bool MaintainingGround()
-		{
-			return superCharacterController.currentGround.IsGrounded(true, 0.5f);
-		}
+		//public bool MaintainingGround()
+		//{
+			//return superCharacterController.currentGround.IsGrounded(true, 0.5f);
+		//}
 
 		/// <summary>
 		/// Set Animator Trigger.

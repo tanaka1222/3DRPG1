@@ -2,7 +2,7 @@
 
 namespace WarriorAnimsFREE
 {
-	public class WarriorMovementController : MonoBehaviour
+	public class WarriorMovementController:MonoBehaviour
     {
 		[Header("Components")]
 		private WarriorController warriorController;
@@ -27,7 +27,7 @@ namespace WarriorAnimsFREE
 			warriorController = GetComponent<WarriorController>();
 			
 			// Set currentState to idle on startup.
-			currentState = WarriorState.Idle;
+			//currentState = WarriorState.Idle;
 		}
 
 		#region Updates
@@ -48,7 +48,7 @@ namespace WarriorAnimsFREE
 		protected void LateGlobalSuperUpdate()
 		{
 			// Move the player by our velocity every frame.
-			transform.position += currentVelocity * warriorController.superCharacterController.deltaTime;
+			//transform.position += currentVelocity * warriorController.superCharacterController.deltaTime;
 
 			// If alive and is moving, set animator.
 			if (warriorController.canMove) {
@@ -93,8 +93,8 @@ namespace WarriorAnimsFREE
 		// If currentState = Jump, we call Jump_SuperUpdate()
 		private void Idle_EnterState()
 		{
-			warriorController.superCharacterController.EnableSlopeLimit();
-			warriorController.superCharacterController.EnableClamping();
+			//warriorController.superCharacterController.EnableSlopeLimit();
+			//warriorController.superCharacterController.EnableClamping();
 			warriorController.LockJump(false);
 			warriorController.SetAnimatorInt("Jumping", 0);
 			warriorController.SetAnimatorBool("Moving", false);
@@ -105,21 +105,22 @@ namespace WarriorAnimsFREE
 		{
 			// If Jump.
 			if (warriorController.canJump && warriorController.inputJump) {
-				currentState = WarriorState.Jump;
+				//currentState = WarriorState.Jump;
 				return;
 			}
 			// In air.
-			if (!warriorController.MaintainingGround()) {
-				currentState = WarriorState.Fall;
+			//if (!warriorController.MaintainingGround())
+			{
+				//currentState = WarriorState.Fall;
 				return;
 			}
 			if (warriorController.HasMoveInput() && warriorController.canMove) {
-				currentState = WarriorState.Move;
+				//currentState = WarriorState.Move;
 				return;
 			}
 			// Apply friction to slow to a halt.
-			currentVelocity = Vector3.MoveTowards(currentVelocity, Vector3.zero, groundFriction 
-				* warriorController.superCharacterController.deltaTime);
+			//currentVelocity = Vector3.MoveTowards(currentVelocity, Vector3.zero, groundFriction 
+				//* warriorController.superCharacterController.deltaTime);
 		}
 
 		// Run once when exit the idle state.
@@ -137,21 +138,22 @@ namespace WarriorAnimsFREE
 		{
 			// If Jump.
 			if (warriorController.canJump && warriorController.inputJump) {
-				currentState = WarriorState.Jump;
+				//currentState = WarriorState.Jump;
 				return;
 			}
 			// Fallling.
-			if (!warriorController.MaintainingGround()) {
-				currentState = WarriorState.Fall;
+			//if (!warriorController.MaintainingGround())
+			{
+				//currentState = WarriorState.Fall;
 				return;
 			}
 			// Set speed determined by movement type.
 			if (warriorController.HasMoveInput() && warriorController.canMove) {
-				currentVelocity = Vector3.MoveTowards(currentVelocity, warriorController.moveInput 
-					* runSpeed, movementAcceleration 
-					* warriorController.superCharacterController.deltaTime);
+				//currentVelocity = Vector3.MoveTowards(currentVelocity, warriorController.moveInput 
+					//* runSpeed, movementAcceleration 
+					//* warriorController.superCharacterController.deltaTime);
 			} else {
-				currentState = WarriorState.Idle;
+				//currentState = WarriorState.Idle;
 			}
 		}
 
@@ -159,34 +161,34 @@ namespace WarriorAnimsFREE
 		{
 			warriorController.SetAnimatorInt("Jumping", 1);
 			warriorController.SetAnimatorTrigger(AnimatorTrigger.JumpTrigger);
-			warriorController.superCharacterController.DisableClamping();
-			warriorController.superCharacterController.DisableSlopeLimit();
-			currentVelocity += warriorController.superCharacterController.up * CalculateJumpSpeed(jumpHeight, gravity);
+			//warriorController.superCharacterController.DisableClamping();
+			//warriorController.superCharacterController.DisableSlopeLimit();
+			//currentVelocity += warriorController.superCharacterController.up * CalculateJumpSpeed(jumpHeight, gravity);
 			warriorController.LockJump(true);
 			warriorController.Jump();
 		}
 
 		private void Jump_SuperUpdate()
 		{
-			Vector3 planarMoveDirection = Math3d.ProjectVectorOnPlane(warriorController.superCharacterController.up, currentVelocity);
-			Vector3 verticalMoveDirection = currentVelocity - planarMoveDirection;
+			//Vector3 planarMoveDirection = Math3d.ProjectVectorOnPlane(warriorController.superCharacterController.up, currentVelocity);
+			//Vector3 verticalMoveDirection = currentVelocity - planarMoveDirection;
 
 			// Falling.
 			if (currentVelocity.y < 0) {
-				currentVelocity = planarMoveDirection;
-				currentState = WarriorState.Fall;
+				//currentVelocity = planarMoveDirection;
+				//currentState = WarriorState.Fall;
 				return;
 			}
 
-			planarMoveDirection = Vector3.MoveTowards(planarMoveDirection, warriorController.moveInput * inAirSpeed, jumpAcceleration * warriorController.superCharacterController.deltaTime);
-			verticalMoveDirection -= warriorController.superCharacterController.up * gravity * warriorController.superCharacterController.deltaTime;
-			currentVelocity = planarMoveDirection + verticalMoveDirection;
+			//planarMoveDirection = Vector3.MoveTowards(planarMoveDirection, warriorController.moveInput * inAirSpeed, jumpAcceleration * warriorController.superCharacterController.deltaTime);
+			//verticalMoveDirection -= warriorController.superCharacterController.up * gravity * warriorController.superCharacterController.deltaTime;
+			//currentVelocity = planarMoveDirection + verticalMoveDirection;
 		}
 
 		private void Fall_EnterState()
 		{
-			warriorController.superCharacterController.DisableClamping();
-			warriorController.superCharacterController.DisableSlopeLimit();
+			//warriorController.superCharacterController.DisableClamping();
+			//warriorController.superCharacterController.DisableSlopeLimit();
 			warriorController.LockJump(false);
 			warriorController.SetAnimatorInt("Jumping", 2);
 			warriorController.SetAnimatorTrigger(AnimatorTrigger.JumpTrigger);
@@ -195,14 +197,15 @@ namespace WarriorAnimsFREE
 		private void Fall_SuperUpdate()
 		{
 			// Landing.
-			if (warriorController.AcquiringGround()) {
-				currentVelocity = Math3d.ProjectVectorOnPlane(warriorController.superCharacterController.up, currentVelocity);
-				currentState = WarriorState.Idle;
+			//if (warriorController.AcquiringGround())
+			{
+				//currentVelocity = Math3d.ProjectVectorOnPlane(warriorController.superCharacterController.up, currentVelocity);
+				//currentState = WarriorState.Idle;
 				return;
 			}
 
 			// Normal gravity.
-			currentVelocity -= warriorController.superCharacterController.up * gravity * warriorController.superCharacterController.deltaTime;
+			//currentVelocity -= warriorController.superCharacterController.up * gravity * warriorController.superCharacterController.deltaTime;
 		}
 
 		private void Fall_ExitState()
@@ -211,7 +214,7 @@ namespace WarriorAnimsFREE
 			warriorController.SetAnimatorTrigger(AnimatorTrigger.JumpTrigger);
 
 			// Landed.
-			if (warriorController.AcquiringGround()) { warriorController.Land(); }
+			//if (warriorController.AcquiringGround()) { warriorController.Land(); }
 		}
 
 		#endregion

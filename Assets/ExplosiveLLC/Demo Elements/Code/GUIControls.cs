@@ -23,16 +23,19 @@ namespace WarriorAnimsFREE
 
 		private void Attacking()
 		{
-			if (warriorController.MaintainingGround() && warriorController.canAction) {
+			//if (warriorController.MaintainingGround() && warriorController.canAction)
+			{
 					if (GUI.Button(new Rect(25, 85, 100, 30), "Attack1")) { warriorController.Attack1(); }
 			}
 		}
 
 		private void Jumping()
 		{
-			if (warriorController.canJump
-				&& warriorController.canAction) {
-				if (warriorController.MaintainingGround()) {
+			//if (warriorController.canJump
+				//&& warriorController.canAction)
+				{
+				//if (warriorController.MaintainingGround())
+				{
 					if (GUI.Button(new Rect(25, 175, 100, 30), "Jump")) {
 						if (warriorController.canJump) { warriorController.inputJump = true; ; }
 					}

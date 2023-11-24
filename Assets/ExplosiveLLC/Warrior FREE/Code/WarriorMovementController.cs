@@ -2,8 +2,8 @@
 
 namespace WarriorAnimsFREE
 {
-	public class WarriorMovementController:SuperStateMachine
-	{
+	public class WarriorMovementController : MonoBehaviour
+    {
 		[Header("Components")]
 		private WarriorController warriorController;
 
@@ -39,13 +39,13 @@ namespace WarriorAnimsFREE
 
 		// Put any code in here you want to run BEFORE the state's update function. 
 		// This is run regardless of what state you're in.
-		protected override void EarlyGlobalSuperUpdate()
+		protected  void EarlyGlobalSuperUpdate()
 		{
 		}
 
 		// Put any code in here you want to run AFTER the state's update function.  
 		// This is run regardless of what state you're in.
-		protected override void LateGlobalSuperUpdate()
+		protected void LateGlobalSuperUpdate()
 		{
 			// Move the player by our velocity every frame.
 			transform.position += currentVelocity * warriorController.superCharacterController.deltaTime;

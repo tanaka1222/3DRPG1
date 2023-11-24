@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace WarriorAnimsFREE
 {
-	public class WarriorController:SuperStateMachine
+	public class WarriorController : MonoBehaviour
 	{
 		[Header("Components")]
 		public Warrior warrior;
 		public GameObject target;
 		public GameObject weapon;
 		private Rigidbody rb;
-		[HideInInspector] public SuperCharacterController superCharacterController;
+		[HideInInspector] public MonoBehaviour monoBehaviour;
 		[HideInInspector] public WarriorMovementController warriorMovementController;
 		[HideInInspector] public WarriorInputController warriorInputController;
 		[HideInInspector] public WarriorInputSystemController warriorInputSystemController;

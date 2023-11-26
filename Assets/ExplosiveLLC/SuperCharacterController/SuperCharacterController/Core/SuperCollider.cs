@@ -29,12 +29,12 @@ public static class SuperCollider {
                 return true;
             }
 
-            BruteForceMesh bfm = collider.GetComponent<BruteForceMesh>();
+            //BruteForceMesh bfm = collider.GetComponent<BruteForceMesh>();
 
-            if (bfm != null)
+            //if (bfm != null)
             {
-                closestPointOnSurface = bfm.ClosestPointOn(to);
-                return true;
+                //closestPointOnSurface = bfm.ClosestPointOn(to);
+                //return true;
             }
         }
         else if (collider is TerrainCollider)
@@ -258,8 +258,8 @@ public static class SuperCollider {
 
                 if (debug)
                 {
-                    DebugDraw.DrawTriangle(a, d, c, Color.cyan);
-                    DebugDraw.DrawTriangle(a, b, d, Color.red);
+                    //DebugDraw.DrawTriangle(a, d, c, Color.cyan);
+                    //DebugDraw.DrawTriangle(a, b, d, Color.red);
                 }
             }
         }

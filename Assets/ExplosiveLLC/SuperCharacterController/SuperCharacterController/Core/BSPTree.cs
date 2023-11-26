@@ -170,7 +170,7 @@ public class BSPTree : MonoBehaviour {
         partitionPoint /= vertexCount;
 
         // Better idea? Center of bounding box
-        partitionPoint = minExtents + Math3d.SetVectorLength((maxExtents - minExtents), (maxExtents - minExtents).magnitude * 0.5f);
+       // partitionPoint = minExtents + Math3d.SetVectorLength((maxExtents - minExtents), (maxExtents - minExtents).magnitude * 0.5f);
 
         Vector3 extentsMagnitude = new Vector3(Mathf.Abs(maxExtents.x - minExtents.x), Mathf.Abs(maxExtents.y - minExtents.y), Mathf.Abs(maxExtents.z - minExtents.z));
 
@@ -205,8 +205,8 @@ public class BSPTree : MonoBehaviour {
         {
             posNode.triangles = positiveTriangles.ToArray();
 
-            if (drawMeshTreeOnStart)
-                DrawTriangleSet(posNode.triangles, DebugDraw.RandomColor());
+            //if (drawMeshTreeOnStart)
+                //DrawTriangleSet(posNode.triangles,DebugDraw.RandomColor());
         }
 
         if (negativeTriangles.Count < triangles.Count && negativeTriangles.Count > 3)
@@ -217,8 +217,8 @@ public class BSPTree : MonoBehaviour {
         {
             negNode.triangles = negativeTriangles.ToArray();
 
-            if (drawMeshTreeOnStart)
-                DrawTriangleSet(negNode.triangles, DebugDraw.RandomColor());
+            //if (drawMeshTreeOnStart)
+                //DrawTriangleSet(negNode.triangles, DebugDraw.RandomColor());
         }
 
     }
@@ -371,7 +371,7 @@ public class BSPTree : MonoBehaviour {
     {
         foreach (int triangle in triangles)
         {
-            DebugDraw.DrawTriangle(vertices[tris[triangle]], vertices[tris[triangle + 1]], vertices[tris[triangle + 2]], color, transform);
+            //DebugDraw.DrawTriangle(vertices[tris[triangle]], vertices[tris[triangle + 1]], vertices[tris[triangle + 2]], color, transform);
         }
     }
 }

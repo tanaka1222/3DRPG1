@@ -70,6 +70,7 @@
     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\SimpleSampleCharacterControl.cs" />
     <Compile Include="Assets\ExplosiveLLC\Warrior FREE\Code\WarriorTiming.cs" />
     <Compile Include="Assets\ExplosiveLLC\Warrior FREE\Code\IKHands.cs" />
+    <Compile Include="Assets\SkythianCat\Glowing_Forest\Scripts\WaterGroup.cs" />
     <Compile Include="Assets\ExplosiveLLC\Demo Elements\Code\CameraController.cs" />
     <Compile Include="Assets\ExplosiveLLC\SuperCharacterController\SuperCharacterController\Core\BSPTree.cs" />
     <Compile Include="Assets\ExplosiveLLC\SuperCharacterController\SuperCharacterController\Core\SuperCollider.cs" />

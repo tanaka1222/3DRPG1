@@ -369,12 +369,17 @@
 "Assets/ExplosiveLLC/Warrior FREE/Code/WarriorInputSystemController.cs"
 "Assets/ExplosiveLLC/Warrior FREE/Code/WarriorMovementController.cs"
 "Assets/ExplosiveLLC/Warrior FREE/Code/WarriorTiming.cs"
+"Assets/kamata/EnemyAtk.cs"
+"Assets/kamata/EnemyController.cs"
+"Assets/kamata/EnemyManager.cs"
+"Assets/kamata/StatusManager.cs"
 "Assets/SimpleSkeletonFree/Script/Character/PlayerController.cs"
 "Assets/SkythianCat/Glowing_Forest/Scripts/WaterGroup.cs"
 "Assets/Supercyan Character Pack Free Sample/Scripts/DemoFree.cs"
 "Assets/Supercyan Character Pack Free Sample/Scripts/FreeCameraLogic.cs"
 "Assets/Supercyan Character Pack Free Sample/Scripts/SimpleSampleCharacterControl.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/EnvMapAnimator.cs"
+"Assets/_Creepy_Cat/3D Games Effects Pack Free/Example_02/InstanceExample.cs"
 -langversion:9.0
 
 /deterministic

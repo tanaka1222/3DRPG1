@@ -545,6 +545,10 @@ PrefabInstance:
       propertyPath: HPGage
       value: 
       objectReference: {fileID: 504597634741500304}
+    - target: {fileID: 2227303910665323906, guid: 0dae7eee06bad704c8961be104f35c75, type: 3}
+      propertyPath: TagName
+      value: buki
+      objectReference: {fileID: 0}
     - target: {fileID: 8672038701858629602, guid: 0dae7eee06bad704c8961be104f35c75, type: 3}
       propertyPath: m_RootOrder
       value: 2

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float PlayerSpeed;
+    public float RotationSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,22 +15,46 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input. GetKey(KeyCode. W))
+        Move();
+        Rotation();
+    }
+
+    void Move()
+    {
+        var speed = Vector3.zero;
+        if (Input.GetKey(KeyCode.W))
         {
-            transform.position += new Vector3(0, 0, 0.1f);
+            speed.z = PlayerSpeed;
         }
-        if (Input.GetKey(KeyCode. S))
+        if (Input.GetKey(KeyCode.S))
         {
-            transform.position += new Vector3(0, 0, -0.1f);
+            speed.z = -PlayerSpeed;
         }
-        if (Input.GetKey(KeyCode. A))
+        if (Input.GetKey(KeyCode.A))
         {
-            transform.position += new Vector3(-0.1f, 0, 0);
+            speed.x = -PlayerSpeed;
         }
-        if (Input.GetKey(KeyCode. D))
+        if (Input.GetKey(KeyCode.D))
         {
-            transform.position += new Vector3(0.1f, 0, 0);
+            speed.x = PlayerSpeed;
         }
+
+        transform.Translate(speed);
+    }
+
+    void Rotation()
+    {
+        var speed = Vector3.zero;
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            speed.y = -RotationSpeed;
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            speed.y = RotationSpeed;
+        }
+
+        transform.eulerAngles += speed;
     }
 
     // ---------------------------------------------------------------------

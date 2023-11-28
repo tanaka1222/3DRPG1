@@ -9471,6 +9471,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8533409232248480602, guid: 98a9e3bcc0af1404a9808dde1b6b5084, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8533787236809198350, guid: 98a9e3bcc0af1404a9808dde1b6b5084, type: 3}
       propertyPath: m_Name
       value: MobileMaleFree1 Variant

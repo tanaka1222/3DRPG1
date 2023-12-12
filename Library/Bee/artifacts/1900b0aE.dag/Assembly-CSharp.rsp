@@ -383,6 +383,7 @@
 "Assets/ExplosiveLLC/Warrior FREE/Code/WarriorInputSystemController.cs"
 "Assets/ExplosiveLLC/Warrior FREE/Code/WarriorMovementController.cs"
 "Assets/ExplosiveLLC/Warrior FREE/Code/WarriorTiming.cs"
+"Assets/GameManager.cs"
 "Assets/kamata/EnemyAtk.cs"
 "Assets/kamata/EnemyController.cs"
 "Assets/kamata/EnemyManager.cs"

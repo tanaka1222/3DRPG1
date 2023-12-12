@@ -1346,4 +1346,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainScene.unity
-  playerPath: "C:/Users/tanak/OneDrive/\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8/3DRPG1/3DRPG1.exe"
+  playerPath: "C:/Users/tanak/OneDrive/\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8/3DRPG1/Build/3DRPG1.exe"
